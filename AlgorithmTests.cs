@@ -49,52 +49,47 @@ namespace FindPairofIntsThatEqualZero
         }
 
         // Test 4
-        // need to make 2 separate random arrays of a length > 99, and check that they are different
-       /*
+        // test that the array has randomly generated numbers from -1000 to 1000
+        // do so by creating 2 randomly generated arrays and making sure they are random
         [Test]
-        public void Given2ArraysChecksThatBothAreRandomized()
+        public void GivenIntRangeReturnsArrayOfRandomInts()
         {
+            int size = 25;
 
-        }
-        */
+            bool output = new Algorithm().ReturnsTrueIfBothArrayContentsAreDifferent(size);
 
-        /* Test 5
-        [Test]
-        public void GivenIntAsInputReturnsRandomlyGeneratedArrayOfLengthX()
-        {
-            int numOfIntsInArray = 4;
-
-            int[] array = new Algorithm().GenerateArrayOfIntsFromNegative1000toPositive1000(numOfIntsInArray);
-
-            int output = array.Length;
-            int expected = 4;
+            bool expected = true;
 
             Assert.AreEqual(expected, output);
         }
-        */
         
-
-        /* Test 6
+        // Test 5
         [Test]
-        public void GivenIntegerArrayReturnsFirstNumPairThatEqual0()
+        public void GivenStaticIntArrayReturnsFirstNumPairThatEqualZero()
         {
-            int[] sampleData = new int[4] { 800, 5, 3, -800 };
+            int[] sampleData = new int[] { 800, 5, 3, -800 };
 
-            int[] ouput = new int[2] { 800, -800 };
-
-            int[] GivenArrayOfIntsReturnsFirstPairOfIntsThatEquals0
+            int[] expected = new int[] { 800, -800 };
+               
+            int[] output = new Algorithm().GivenArrayOfIntsReturnsFirstPairOfIntsThatEqualsZero(sampleData);
 
             Assert.AreEqual(expected, output);
         }
-        */
 
-        /* Test 6
+         // Test 6
          [Test]
-         public void GivenIntegerArrayReturnsAllPairsThatEqualZero()
+         public void ReturnsNumberOfPairsThatEqualZero()
          {
+            int[] sampleData = new int[] { 800, 3, -800, 6, 6 };
 
+            int expected = 2;
+
+            int output = new Algorithm().ReturnsNumberOfPairsThatEqualZero(sampleData);
+
+            Assert.AreEqual(expected, output);
          }
-         */
 
+        // Test 7
+        // Final Test, ReturnsNumberOfPairsThatEqualZero with real data
     }
 }
